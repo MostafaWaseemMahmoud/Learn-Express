@@ -4,7 +4,11 @@
   "description": "Learn Express.js For Back-End",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "node app.js"
+  },
+
+  "engines": {
+    "node": "v20.x"
   },
   "keywords": [],
   "author": "",

@@ -4,6 +4,7 @@ app.use(expresss.json());
 let users = [];
 //  * HTTP Methods
 
+const port = 3000 || process.env.PORT;
 // Get
 
 app.get("/", (req, res) => {
@@ -34,6 +35,10 @@ app.post("/users", (request, response) => {
   response.status(201).send("Created!");
 });
 
+app.get("/test", (req, res) => {
+  res.json({ message: "This Is A Test End Point" });
+});
+
 //Delete
 app.delete("/users/:id", (req, res) => {
   const { id } = req.params;
@@ -47,6 +52,6 @@ app.delete("/users/:id", (req, res) => {
 });
 // We Now Create A New Host Server
 
-app.listen(3000, () => {
-  console.log("started On Port 3000");
+app.listen(port, () => {
+  console.log("started On Port " + port);
 });
